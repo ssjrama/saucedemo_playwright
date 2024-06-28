@@ -25,7 +25,14 @@ module.exports = defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
+    baseURL: 'https://reqres.in/api',
+    // extraHTTPHeaders: {
+      // We set this header per GitHub guidelines.
+      // 'Accept': 'application/vnd.github.v3+json',
+      // Add authorization token to all requests.
+      // Assuming personal access token available in the environment.
+      // 'Authorization': `token ${process.env.API_TOKEN}`,
+    // },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     testIdAttribute: 'data-test',
